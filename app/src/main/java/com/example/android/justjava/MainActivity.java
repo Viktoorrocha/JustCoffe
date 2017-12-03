@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void increment(View view ){
-    quantity = quantity + 1;
+    quantity = quantity +1;
     display(quantity);
     }
 
@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int quantity = 0;
-        display(quantity);
         displayPrice(quantity * 5 );
     }
 
