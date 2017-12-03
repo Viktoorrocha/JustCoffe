@@ -20,7 +20,7 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-
+    int quantity = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void increment(View view ){
-    int quantity = 1;
+    quantity = quantity + 1;
     display(quantity);
     }
 
 
     public void decrement(View view){
-    int quantity = 1;
+    quantity = quantity -1;
     display(quantity);
 
     }
 
     public void submitOrder(View view) {
-        int quantity = 2;
+        int quantity = 0;
         display(quantity);
         displayPrice(quantity * 5 );
     }
