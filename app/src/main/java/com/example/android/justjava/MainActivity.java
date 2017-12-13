@@ -10,6 +10,7 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.android.justjava.R;
@@ -46,14 +47,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
+
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price);
+        String priceMessage = createOrderSummary(price, hasWhippedCream);
         displayMessage(priceMessage);
     }
 
 
-    private String createOrderSummary( int price){
+    private String createOrderSummary( int price, boolean addWhippedCream){
         String priceMessage = "Name: Kaptain Kunal";
+        priceMessage = priceMessage = "Add whipped cream ?" + addWhippedCream;
         priceMessage = priceMessage + "\nQuantity" + quantity;
         priceMessage = priceMessage + "\nTotal: $ " + calculatePrice();
         priceMessage = priceMessage + "\nThank you!";
