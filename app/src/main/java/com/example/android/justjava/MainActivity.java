@@ -9,8 +9,10 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.android.justjava.R;
@@ -35,18 +37,32 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void increment(View view ){
-    quantity = quantity +1;
-    displayQuantity(quantity);
+
+        if ( quantity == 100) {
+            return ;
+        }
+
+         quantity = quantity +1;
+        displayQuantity(quantity);
     }
 
 
     public void decrement(View view){
-    quantity = quantity -1;
+
+        if ( quantity == 1) {
+            return;
+        }
+        quantity = quantity -1;
     displayQuantity(quantity);
 
     }
 
     public void submitOrder(View view) {
+
+
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        Editable nameEditable = nameField.getText();
+        String name = nameEditable.toString();
 
 
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
